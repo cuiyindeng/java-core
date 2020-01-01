@@ -1,22 +1,19 @@
 package com.exercise.core.generic;
 
-public class Tool<QQ> {
+    /**
+     * 这是一个泛型类，T就是类型参数
+     * @param <T>
+     */
+    public class Tool<T> {
 
-    private QQ q;
+        private T a;
 
-    public QQ getObject() {
-        return q;
+        public T get() {
+            return this.a;
+        }
+
+        public void set(T a) {
+            this.a = a;
+        }
+
     }
-
-    public void setObject(QQ object) {
-        q = object;
-    }
-
-    public <W> void show(W str) {
-        System.out.println("show: " + str);
-    }
-
-    public static <QQ> void method(QQ obj) {
-        System.out.println("aaa");
-    }
-}
