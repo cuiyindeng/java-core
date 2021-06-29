@@ -1,0 +1,12 @@
+@startuml
+Alice -> Bob: Authentication Request
+alt successful case
+	Bob -> Alice: Authentication Accepted
+else some kind of failure
+else Another type of failure
+   Bob -> Alice: Please repeat
+Bob --> Alice: Authentication
+end
+Alice -> Bob: Another authentication Request
+Alice <-- Bob: another authentication Response
+@enduml

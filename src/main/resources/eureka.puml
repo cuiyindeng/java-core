@@ -1,0 +1,11 @@
+@startuml
+micro_service -> eureka_server: 注册ip、端口、名称等。
+loop 30秒
+    micro_service -> eureka_server: 续约租期
+end
+opt 90秒未接收到心跳
+    eureka_server -> micro_service: 剔除
+end
+eureka_server -> eureka_server:通过复制，同步数据
+micro_service -> eureka_server: 缓存eureka中的信息，减少微服务连接eureka server的压力。
+@enduml
