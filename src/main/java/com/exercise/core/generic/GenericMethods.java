@@ -1,8 +1,16 @@
 package com.exercise.core.generic;
 
 public class GenericMethods {
-    public <T> void f(T x) {
-        System.out.println(x.getClass().getName());
+    //泛型方法的返回类型前必须指定泛型（<T>）
+    public <T> T f(T x) {
+        try {
+            return (T) x.getClass().newInstance();
+        } catch (InstantiationException e) {
+            e.printStackTrace();
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 
     public static void main(String[] args) {
