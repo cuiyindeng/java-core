@@ -2,6 +2,11 @@ package com.exercise.core.interview;
 
 public class Fibonacci {
 
+    /**
+     * n是第n个数，而不是具体的结果数
+     * @param n
+     * @return
+     */
     public static int fib1(int n) {
         if(n == 0) return 0;
         if(n == 1) return 1;
